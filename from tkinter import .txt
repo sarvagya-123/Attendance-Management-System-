@@ -1,0 +1,116 @@
+from tkinter import *
+from tkinter import ttk
+from PIL import Image, ImageTk
+
+
+class FaceRecognitionSystem:
+    def __init__(self, root):
+        self.root = root
+        self.root.geometry("1530x790+0+0")
+        self.root.title("ATTENDANCE MANAGEMENT SYSTEM")
+
+        # Set background color
+        self.root.configure(bg="thistle")
+
+        # First Image 
+       
+        img = Image.open(r"C:\Users\91639\OneDrive\Desktop\attendance system.png")
+        img = img.resize((500, 130), Image.BICUBIC)
+        self.photoimg = ImageTk.PhotoImage(img)
+
+        f_lbl = Label(self.root, image=self.photoimg)
+        f_lbl.grid(row=0, column=0, padx=10, pady=10)
+
+        # Second Image   
+        
+        img1= Image.open(r"C:\Users\91639\OneDrive\Desktop\simple.png")
+        img1 = img1.resize((500, 130), Image.BICUBIC)
+        self.photoimg1 = ImageTk.PhotoImage(img1)
+
+        f_lbl = Label(self.root, image=self.photoimg1)
+        f_lbl.grid(row=0, column=1, padx=10, pady=10)
+
+
+        # Third Image 
+
+        img2 = Image.open(r"C:\Users\91639\OneDrive\Desktop\attendance system.png")
+        img2 = img2.resize((500, 130), Image.BICUBIC)
+        self.photoimg2 = ImageTk.PhotoImage(img2)
+
+        f_lbl = Label(self.root, image=self.photoimg2)
+        f_lbl.grid(row=0, column=2, padx=10, pady=10)
+
+        title_label = Label(self.root, text="FACE RECOGNITION ATTENDANCE SYSTEM", font=("times new roman", 35, "italic"), bg="white", fg="red")
+        title_label.grid(row=1, column=0, columnspan=3, pady=10)
+
+        # Employee Management Button
+        img3 = Image.open(r"C:\Users\91639\OneDrive\Desktop\download.jpg")
+        img3 = img3.resize((220,220), Image.BICUBIC)
+        self.photoimg3 = ImageTk.PhotoImage(img3)
+        
+
+        b1 = Button(self.root,image=self.photoimg3,cursor="star")
+        b1.place(x=180,y=250,width=220,height=180)
+
+
+        b1_1 = Button(self.root,text="Student Details",cursor="spider",font=("times new roman", 20, "italic"), bg="white", fg="red")
+        b1_1.place(x=182,y=435 ,width=220,height=40)
+
+        # Face Ddetection
+        img4 = Image.open(r"C:\Users\91639\OneDrive\Desktop\detector.jpg")
+        img4 = img4.resize((220,220), Image.BICUBIC)
+        self.photoimg4 = ImageTk.PhotoImage(img4)
+        
+       
+        b2 = Button(self.root,image=self.photoimg3,cursor="star")
+        b2.place(x=180,y=250,width=220,height=180)
+
+
+        b2_2 = Button(self.root,text="Face Detector",cursor="spider",font=("times new roman", 20, "italic"), bg="white", fg="red")
+        b2_2.place(x=700,y=435 ,width=220,height=40)
+
+
+
+
+
+
+if __name__ == "__main__":
+    root = Tk()
+    obj = FaceRecognitionSystem(root)
+    root.mainloop()
+
+
+
+ self.employee_table.heading("employee_id",text="Employee_ID")
+        self.employee_table.heading("employee_name",text="Employee_Name")
+        self.employee_table.heading("gender",text="Gender")
+        self.employee_table.heading("product_category",text="Product_category")
+        self.employee_table.heading("phone",text="Phone")
+        self.employee_table.heading("email",text="Email")
+        self.employee_table.heading("address",text="Address")
+        self.employee_table.heading("verification_id",text="Verification_ID")
+        self.employee_table["show"] ="headings"
+        
+
+
+        self.employee_table.column("Employee_ID", width=100)
+        self.employee_table.column("Employee_Name", width=150)
+        self.employee_table.column("Gender", width=80)
+        self.employee_table.column("Product_Category", width=150)
+        self.employee_table.column("Phone", width=120)
+        self.employee_table.column("Email", width=200)
+        self.employee_table.column("Address", width=200)
+        self.employee_table.column("Verification_ID", width=120)
+
+
+
+
+
+
+
+        b1 = Button(self.root,image=self.photoimg3,command=self.employee_details,cursor="star")
+        b1.place(x=180,y=250,width=220,height=180)
+
+
+        b1_1 = Button(self.root,text=" Employee Details",command=self.employee_details,cursor="spider",font=("times new roman", 20, "italic"), bg="white", fg="red")
+        b1_1.place(x=182,y=435 ,width=220,height=40)
